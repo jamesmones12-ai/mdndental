@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://www.mdndentalstudio.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     
@@ -52,13 +52,19 @@
     </script>
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">MDN Dental Studio</a>
+            
             <nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+                </button>
+        
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Our Story</a></li>
                     <li><a href="services.html">Menu of Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -131,5 +137,14 @@
             <p>Designed for Comfort & Clarity</p>
         </div>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
