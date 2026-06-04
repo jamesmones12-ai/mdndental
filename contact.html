@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Contact MDN Dental Studio Cainta</title>
+    <meta name="description" content="Get in touch with MDN Dental Studio in Vista Verde, Cainta. Fill out our online contact form to query specific procedures, pricing structures, or open slot dates.">
+    <link rel="canonical" href="https://www.mdndentalstudio.com/contact.html">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">MDN Dental Studio</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Menu of Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Book an appointment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-grid">
+            <div class="contact-info">
+                <h1>Connect With Us</h1>
+                <p>Ready to start your smile journey? Reach out to check open slots, ask about pricing estimates, or speak directly with our team.</p>
+                
+                <div class="info-details">
+                    <div class="info-row">
+                        <strong>Location</strong>
+                        <span>Marikina-Infanta Hwy, Vista Verde, Cainta, Rizal, 1900</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>Phone</strong>
+                        <span>+63 (02) 8123 4567</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>Email</strong>
+                        <span>hello@mdndentalstudio.com</span>
+                    </div>
+                </div>
+
+                <!-- Strategic descriptive map block anchor -->
+                <div style="background-color: var(--bg-card); border-radius: 20px; height: 230px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-muted); border: 1px dashed var(--accent-pink); padding: 2rem;">
+                    <p style="margin:0; font-size:0.9rem; font-style:italic;">[SEO Anchor: Embed Google Maps iFrame showing Vista Verde, Cainta, Rizal location markers here]</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+    <h3 style="margin-bottom: 1.5rem; font-family: var(--font-sans); font-weight: 500;">Appointment & Pricing Inquiry</h3>
+    
+    <form action="https://formspree.io/f/xbdejbgr" method="POST">
+        
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="Client Name" required placeholder="Juan Dela Cruz">
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" required placeholder="juan@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="inquiry-type">Inquiry Type</label>
+            <select id="inquiry-type" name="Inquiry Type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="booking">Book an Appointment</option>
+                <option value="pricing">Pricing Quote Request</option>
+                <option value="availability">General Availability</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="service">Interested Service</label>
+            <select id="service" name="Requested Service">
+                <option value="Studio Clean & Polish">Studio Clean & Polish</option>
+                <option value="Composite Artistry">Composite Artistry</option>
+                <option value="Boutique Whitening">Boutique Whitening</option>
+                <option value="Premium Porcelain Veneers">Premium Porcelain Veneers</option>
+                <option value="Other/Not Sure">Other/Not Sure</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Additional Notes / Preferred Date</label>
+            <textarea id="message" name="Notes & Preferred Date" rows="4" placeholder="Tell us about your dental goals or specify your preferred schedule..."></textarea>
+        </div>
+        
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+    </form>
+</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>MDN Dental Studio</h3>
+                <p>Redefining clinical care into a premium wellness experience in Cainta, Rizal.</p>
+            </div>
+            <div class="footer-hours">
+                <h4>Operational Hours</h4>
+                <p>Monday – Saturday: 9:00 AM – 6:00 PM</p>
+                <p>Sunday: By Appointment Only</p>
+            </div>
+            <div class="footer-links">
+                <h4>Social & Links</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Services Menu</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MDN Dental Studio. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Auto Selector URL Script logic to process queries from services menu clicks -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            const selectEl = document.getElementById('service');
+            if(serviceParam === 'clean') selectEl.value = 'general';
+            else if(serviceParam === 'composite') selectEl.value = 'composite';
+            else if(serviceParam === 'whitening') selectEl.value = 'whitening';
+            else if(serviceParam === 'veneers') selectEl.value = 'veneers';
+            
+            document.getElementById('inquiry-type').value = 'pricing';
+        }
+    </script>
+</body>
+</html>

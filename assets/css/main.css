@@ -1,0 +1,500 @@
+/* ==========================================================================
+   DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    --bg-cream: #FDFBF7;
+    --bg-card: #F7F4EB;
+    --primary: #5A7365;       /* Soft Sage Green */
+    --primary-light: #E2ECE6;
+    --accent-pink: #E8D3C7;    /* Warm Pastel Clay */
+    --text-dark: #2C3330;
+    --text-muted: #6B7570;
+    --white: #FFFFFF;
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+p {
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   NAVIGATION HEADER
+   ========================================================================== */
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, 
+.nav-links .active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   BUTTONS & ACTIONS
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #46594E;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-light);
+}
+
+/* ==========================================================================
+   SHARED STRUCTURAL LAYOUTS
+   ========================================================================== */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.img-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--accent-pink);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   HOMEPAGE SPECIFIC (INDEX)
+   ========================================================================== */
+.hero {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.value-props {
+    background-color: var(--bg-card);
+    border-radius: 30px;
+    padding: 4rem 3rem;
+    margin-bottom: 5rem;
+}
+
+.value-props-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.value-props-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.props-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.prop-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.prop-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   ABOUT PAGE SPECIFIC (ABOUT)
+   ========================================================================== */
+.story-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+}
+
+.story-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   SERVICES MENU PAGE SPECIFIC (SERVICES)
+   ========================================================================== */
+.menu-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+}
+
+.menu-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: var(--white);
+    border: 1px solid var(--bg-card);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(90, 115, 101, 0.05);
+}
+
+.service-title-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--accent-pink);
+    padding-bottom: 0.75rem;
+}
+
+.service-title-price h3 {
+    font-size: 1.4rem;
+}
+
+.price {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.service-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-item .btn-outline {
+    text-align: center;
+}
+
+/* ==========================================================================
+   CONTACT PAGE SPECIFIC (CONTACT)
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+}
+
+.contact-info h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.info-details {
+    margin-bottom: 2rem;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.info-row strong {
+    width: 100px;
+    font-weight: 500;
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+    border: 1px solid var(--bg-card);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--accent-pink);
+    background-color: var(--bg-cream);
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--white);
+}
+
+.map-placeholder {
+    background-color: var(--bg-card); 
+    border-radius: 20px; 
+    height: 230px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--text-muted); 
+    border: 1px dashed var(--accent-pink); 
+    padding: 2rem;
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER SYSTEM
+   ========================================================================== */
+footer {
+    background-color: var(--text-dark);
+    color: var(--bg-cream);
+    padding: 4rem 2rem 2rem 2rem;
+    margin-top: 5rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.51fr 1fr 1fr;
+    gap: 4rem;
+    border-bottom: 1px solid #3D4743;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #A3AFA9;
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+.footer-hours h4, 
+.footer-links h4 {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    color: var(--accent-pink);
+}
+
+.footer-hours p {
+    color: #A3AFA9;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: #A3AFA9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #7A8781;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 968px) {
+    .grid-2, 
+    .props-grid, 
+    .services-grid, 
+    .contact-grid, 
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .story-header h1, 
+    .menu-header h1, 
+    .contact-info h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* Can be targeted later to wire up a mobile hamburger menu overlay toggle button */
+    }
+}
