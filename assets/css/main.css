@@ -4,9 +4,9 @@
 :root {
     --bg-cream: #FDFBF7;
     --bg-card: #F7F4EB;
-    --primary: #5A7365;       /* Soft Sage Green */
+    --primary: #5A7365;       
     --primary-light: #E2ECE6;
-    --accent-pink: #E8D3C7;    /* Warm Pastel Clay */
+    --accent-pink: #E8D3C7;    
     --text-dark: #2C3330;
     --text-muted: #6B7570;
     --white: #FFFFFF;
@@ -22,6 +22,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -153,7 +158,7 @@ section {
 .img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 /* ==========================================================================
@@ -381,17 +386,23 @@ section {
 }
 
 .map-placeholder {
-    background-color: var(--bg-card); 
-    border-radius: 20px; 
-    height: 230px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    color: var(--text-muted); 
-    border: 1px dashed var(--accent-pink); 
-    padding: 2rem;
-}
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px; 
+  }
+
+  .map-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
 
 /* ==========================================================================
    GLOBAL FOOTER SYSTEM
@@ -478,9 +489,13 @@ footer {
     .grid-2, 
     .props-grid, 
     .services-grid, 
-    .contact-grid, 
     .footer-container {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-grid {
+        display: block;
         gap: 2.5rem;
     }
     
